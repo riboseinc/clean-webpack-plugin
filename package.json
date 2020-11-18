@@ -43,7 +43,8 @@
     "typescript": "tsc",
     "git-pre-commit": "lint-staged",
     "git-pre-push": "npm run lint && npm run typescript && npm run test.all",
-    "prepublishOnly": "npm run build && npm run lint && npm run typescript && npm run test.all",
+    "prepublishOnly": "npm run lint && npm run typescript && npm run test.all",
+    "prepare": "npm run build",
     "release": "np"
   },
   "peerDependencies": {
