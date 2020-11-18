@@ -76,10 +76,9 @@
     "semver": "^6.0.0",
     "temp-sandbox": "^3.0.0",
     "typescript": "^3.4.5",
-    "webpack": "^4.32.0"
+    "webpack": "^5.6.0"
   },
   "dependencies": {
-    "@types/webpack": "^4.4.31",
     "del": "^4.1.1"
   }
 }
