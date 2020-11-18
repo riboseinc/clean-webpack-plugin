@@ -27,7 +27,7 @@
     "url": "https://github.com/johnagan/clean-webpack-plugin/issues"
   },
   "scripts": {
-    "clean": "del-cli --dot=true \"./dist/**/*\"",
+    "clean": "del --dot=true \"./dist/**/*\"",
     "build": "pnpm run clean && pnpm run build.compile && pnpm run build.types",
     "build.compile": "cross-env NODE_ENV=production babel src -d dist --verbose --extensions .ts --ignore */**/*.d.ts,**/**/*.test.ts --source-maps",
     "build.types": "cross-env NODE_ENV=production tsc --project tsconfig.types.json",
