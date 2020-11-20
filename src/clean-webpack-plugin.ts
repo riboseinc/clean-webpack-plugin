@@ -240,10 +240,22 @@ class CleanWebpackPlugin {
         const assets =
             stats.toJson({
                 assets: true,
+                relatedAssets: true,
             }).assets || [];
-        const assetList = assets.map((asset: { name: string }) => {
-            return asset.name;
-        });
+
+        const assetList = assets
+            .map((asset: { related: any; name: string }) => {
+                if (Array.isArray(asset.related)) {
+                    const relatedAssetsNames = asset.related.map(
+                        (asset2: { name: string }) => {
+                            return asset2.name;
+                        },
+                    );
+                    return [asset.name, ...relatedAssetsNames];
+                }
+                return asset.name;
+            })
+            .flat();
 
         /**
          * Get all files that were in the previous build but not the current
